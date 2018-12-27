@@ -3,7 +3,9 @@ def deco(func):
   import time
   import math
 
-  @functools.wraps(func)
+  @functools.wraps(func) #удобная функция для вызова 
+  #partial(update_wrapper, wrapped=wrapped, assigned=assigned, updated=updated) как декоратора при определении функции-оболочки.
+  
   def inner(*args, **kwargs):
       start_timer = time.time()
       result = func(*args, **kwargs)
